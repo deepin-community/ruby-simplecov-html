@@ -1,0 +1,30 @@
+Description: Remove rubygems and bundler
+ apt takes care of the required dependencies.
+ we note down dependencies in debian/control.
+Author: Praveen Arimbrathodiyil <praveen@debian.org>
+Last-Updated: 2013-05-23
+
+Index: ruby-simplecov-html/test/helper.rb
+===================================================================
+--- ruby-simplecov-html.orig/test/helper.rb
++++ ruby-simplecov-html/test/helper.rb
+@@ -1,6 +1,5 @@
+ # frozen_string_literal: true
+ 
+-require "bundler/setup"
+ require "simplecov"
+ require "simplecov-html"
+ require "minitest/autorun"
+Index: ruby-simplecov-html/lib/simplecov-html.rb
+===================================================================
+--- ruby-simplecov-html.orig/lib/simplecov-html.rb
++++ ruby-simplecov-html/lib/simplecov-html.rb
+@@ -10,7 +10,7 @@ require "time"
+ major, minor, patch = SimpleCov::VERSION.scan(/\d+/).first(3).map(&:to_i)
+ if major < 0 || minor < 9 || patch < 0
+   raise "The version of SimpleCov you are using is too old. "\
+-  "Please update with `gem install simplecov` or `bundle update simplecov`"
++  "Please update"
+ end
+ 
+ module SimpleCov

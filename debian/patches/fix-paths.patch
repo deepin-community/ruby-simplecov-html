@@ -1,0 +1,28 @@
+Description: Fix paths to public and views
+ public and views are installed in /usr/share/
+ and library should use those paths to access them
+Author: Praveen Arimbrathodiyil <praveen@debian.org>
+Last-update: 2013-05-28
+
+Index: ruby-simplecov-html/lib/simplecov-html.rb
+===================================================================
+--- ruby-simplecov-html.orig/lib/simplecov-html.rb
++++ ruby-simplecov-html/lib/simplecov-html.rb
+@@ -21,7 +21,7 @@ module SimpleCov
+       end
+ 
+       def format(result)
+-        Dir[File.join(File.dirname(__FILE__), "../public/*")].each do |path|
++        Dir[File.join('/usr/share/ruby-simplecov-html/public/*')].each do |path|
+           FileUtils.cp_r(path, asset_output_path)
+         end
+ 
+@@ -54,7 +54,7 @@ module SimpleCov
+ 
+       # Returns the an erb instance for the template of given name
+       def template(name)
+-        ERB.new(File.read(File.join(File.dirname(__FILE__), "../views/", "#{name}.erb")))
++        ERB.new(File.read(File.join('/usr/share/ruby-simplecov-html/views/', "#{name}.erb")))
+       end
+ 
+       def output_path

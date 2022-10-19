@@ -1,0 +1,66 @@
+ruby-simplecov-html (0.12.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Marc Dequènes (Duck) ]
+  * NUR:
+    + removed 'port-to-newer-jquery' patch, not needed anymore.
+  * Bump debhelper compat level to 13.
+  * Remove obsolete no-upstream-changelog lintian override.
+  * Remove empty ruby-simplecov-html.docs.
+
+ -- Marc Dequènes (Duck) <Duck@DuckCorp.org>  Tue, 10 Nov 2020 15:04:00 +0900
+
+ruby-simplecov-html (0.11.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Cédric Boutillier ]
+  * Use https:// in Vcs-* fields
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Run wrap-and-sort on packaging files
+
+  [ Antonio Terceiro ]
+  * Remove myself from Uploaders:
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Marc Dequènes (Duck) ]
+  * New upstream version 0.11.0:
+    + refresh/adapt patches.
+  * Update watch URL.
+  * Update VCS URLs.
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+
+ -- Marc Dequènes (Duck) <Duck@DuckCorp.org>  Sat, 08 Feb 2020 01:15:48 +0900
+
+ruby-simplecov-html (0.10.0-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #709441)
+    (previous version was never accepted in the archive)
+  * Refresh patches
+  * Update packaging with a new dh-make-ruby run
+    - ignoring test suite since it's not useful
+  * debian/patches/dont-touch-load-path.patch: avoid messing with $LOAD_PATH.
+    Fixes getting test coverage on projects that are also installed locally as
+    Debian packages.
+  * debian/rules: dynamically build public/application.js
+  * debian/patches/port-to-newer-jquery.patch: replace usage of function that
+    was removed from jQuery.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Thu, 22 Oct 2015 18:22:04 -0200
+
+ruby-simplecov-html (0.7.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #709441)
+
+ -- Praveen Arimbrathodiyil <praveen@debian.org>  Thu, 23 May 2013 12:10:35 +0530
